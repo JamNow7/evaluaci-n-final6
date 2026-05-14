@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html lang="es">
+                                                                                                                                          
+  <head>
+    <meta charset="UTF-8">                                                                                                                
+    <link rel="stylesheet" href="/main.css">
+    <title>Detalle - {{mascota.nombre}}</title>
+  </head>
+
+  <body>
+    <h1>Detalle de Mascota</h1>
+
+    <div class="detail-card">
+      <p><strong>ID:</strong> {{mascota.id}}</p>
+      <p><strong>Nombre:</strong> {{mascota.nombre}}</p>
+      <p><strong>RUT del dueño:</strong> {{mascota.rut}}</p>
+      {{#if mascota.edad}}
+      <p><strong>Edad:</strong> {{mascota.edad}}</p>                                                                                      
+      {{/if}}
+      {{#if mascota.raza}}                                                                                                                
+      <p><strong>Raza:</strong> {{mascota.raza}}</p>
+      {{/if}}
+      {{#if mascota.direccion}}
+      <p><strong>Dirección:</strong> {{mascota.direccion}}</p>
+      {{/if}}
+    </div>
+
+    <div class="actions">
+      <a href="/"><button>Volver al registro</button></a>
+    </div>
+  </body>
+
+  </html>

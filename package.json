@@ -1,0 +1,19 @@
+{                                                                                                                                       
+    "name": "ministerio-mascotas",
+    "version": "1.0.0",
+    "description": "Sistema de registro de mascotas",
+    "main": "src/server.js",
+    "scripts": {
+      "start": "node src/server.js",
+      "dev": "nodemon src/server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^5.0.0",
+      "express-handlebars": "^8.0.0"
+    },
+    "devDependencies": {
+      "nodemon": "^3.0.0"                                                                                                                 
+    }
+  }                          

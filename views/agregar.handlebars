@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+  <html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/main.css">
+    <title>Agregar Mascota</title>
+  </head>
+
+  <body>
+    <h1>Agregar Mascota</h1>
+
+    <a href="/">← Volver al registro</a>
+
+    {{#if error}}
+    <p class="error">{{error}}</p>
+    {{/if}}                                                                                                                               
+   
+    <form action="/agregar" method="POST">                                                                                                
+      <input type="text" name="nombre" placeholder="Nombre de la mascota" required>
+      <input type="text" name="rut" placeholder="RUT del dueño" required>
+      <input type="number" name="edad" placeholder="Edad de la mascota">
+      <input type="text" name="especie" placeholder="Especie de la mascota">
+      <input type="text" name="direccion" placeholder="Dirección del dueño">
+      <button type="submit">AGREGAR</button>
+    </form>                                                                                                                               
+  </body>
+                                                                                                                                          
+  </html>         

@@ -1,0 +1,66 @@
+body {          
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+
+  h1 {
+      color: #333;
+  }
+
+  .actions {                                                                                                                              
+      margin: 20px 0;
+  }                                                                                                                                       
+                  
+  .actions button {
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+
+  .lista-mascotas {
+      list-style: none;
+      padding: 0;
+  }
+
+  .lista-mascotas li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin: 5px 0;
+  }
+
+  .btn-delete {
+      background-color: #ff4444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;                                                                                                                    
+  }
+                                                                                                                                          
+  form {          
+      margin: 20px 0;
+  }
+
+  input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 300px;
+  }
+
+  button {
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+
+  .error {
+      color: red;
+      font-weight: bold;
+  }
+
+  .mensaje {
+      color: blue;
+  }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>                                                                                                                         
+  <html lang="es">                                                                                                                        
+                                                                                                                                          
+  <head>
+    <meta charset="UTF-8">                                                                                                                
+    <link rel="stylesheet" href="/main.css">
+    <title>Ministerio de las Mascotas</title>
+  </head>
+
+  <body>
+    <h1>Registro Civil de Mascotas</h1>
+
+    <div class="search">
+      <form method="GET" action="/">
+        <input type="text" name="nombre" placeholder="Buscar por nombre...">
+        <input type="text" name="rut" placeholder="Buscar por RUT...">
+        <button type="submit">BUSCAR</button>                                                                                             
+      </form>
+    </div>                                                                                                                                
+                  
+    <div class="actions">
+      <a href="/"><button>VER TODAS</button></a>
+      <a href="/agregar"><button>AGREGAR MASCOTA</button></a>
+    </div>
+
+    <div class="delete-by-rut">
+      <h3>Eliminar todas las mascotas de un RUT</h3>
+      <form method="POST" action="/eliminar/rut/PLACEHOLDER" onsubmit="this.action='/eliminar/rut/' + 
+  encodeURIComponent(this.elements.rut.value); return true;">                                                                             
+        <input type="text" name="rut" placeholder="RUT del dueño..." required>
+        <button type="submit">ELIMINAR TODAS DE ESTE RUT</button>                                                                         
+      </form>     
+    </div>
+
+    {{#if error}}
+      <p class="error">{{error}}</p>
+    {{/if}}
+
+    {{#if mensaje}}
+      <p class="mensaje">{{mensaje}}</p>
+    {{/if}}
+
+    {{#if mascotas}}
+      <ul class="lista-mascotas">
+        {{#each mascotas}}                                                                                                                
+          <li>
+            <span>ID: {{id}} | Nombre: {{nombre}} | RUT: {{rut}}</span>                                                                   
+            <div class="item-actions">
+              <form method="GET" action="/detalle/{{id}}">
+                <button type="submit" class="btn-detail">Ver Detalle</button>
+              </form>
+              <form method="POST" action="/eliminar/nombre/{{encodeURIComponent nombre}}" 
+               onsubmit="this.querySelector('button').disabled=true; return true;">
+                <button type="submit" class="btn-delete">Eliminar</button>
+              </form>
+            </div>
+          </li>                                                                                                                           
+        {{/each}}
+      </ul>                                                                                                                               
+    {{else}}      
+      <p>No hay mascotas registradas.</p>
+    {{/if}}
+  </body>
+
+  </html>
